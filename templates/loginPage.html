@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/main.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login_form">
+            <h1>Login</h1>
+            <p>Username</p>
+            <input type="text" name="username" id="login">
+            <p>Password</p>
+            <input type="password" name="password" id="login">
+            <a href="signin">Don't have an account? Join Us!</a>
+            <button type="submit">Log In</button>
+        </div>
+        <div class="logo">
+            <h1>stock.ai</h1>
+            <h2>Be proficient in stocks investing with the help of AI</h2>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+<style>
+    .container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0%;
+        margin: 0%;
+        background: #4F5AC1;
+    }
+    .logo{
+        margin-left: 5%;
+    
+    }
+    .logo h1{
+        font-size: 4rem;
+        margin-bottom: 0%;
+    }
+    .login_form{
+        width: 30%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        border-radius: 5%;
+    }
+    #login{
+        all: unset;
+        border-radius: 5px;
+        background-color: #e6e6e6;
+        height: 5%;
+        width: 70%;
+    }
+
+    #login:focus{
+        background-color: #c5c5c5;
+        font-size: 1rem;
+
+    }
+    .login_form button{
+        all: unset;
+        height: 10%;
+        width: 15%;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #4F5AC1;
+        color: white;
+
+    }
+    
+    
+</style>
+
+</html>
