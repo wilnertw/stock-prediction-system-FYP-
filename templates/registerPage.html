@@ -1,0 +1,30 @@
+{%extends "base.html"%}
+
+{%block title%}Sign In{%endblock%}
+
+{%block body%}
+<div class="container_signIn">
+    <form action="/register" method="POST" class="register_form" >
+        <h1>Register</h1>
+        <label for="fullName">Full Name</label>
+        <input type="text" name="fullName" id="fullName" placeholder="Enter Full Name">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Enter Username" >
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter Email">
+        <label for="psw">Password</label>
+        <input type="password" name="psw" id="psw" placeholder="Enter Password" >
+        <label for="con_psw">Confirm Password</label>
+        <input type="password" name="con_psw" id="con_psw" placeholder="Confirm Password" >
+        <a href="login_page">Already have a account?</a>
+        <input onclick="matchPassword()" type="submit" value="Sign In" id="signin">
+    </form>
+    <div class="logo">
+        <h1>stock.ai</h1>
+        <h2>Be proficient in stocks investing 
+            <br> with the help of AI</h2>
+    </div>
+</div>
+{%endblock%}
+
+
