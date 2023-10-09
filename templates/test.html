@@ -1,17 +1,21 @@
-{%extends 'base.html' %}
-
-{%block head%}
-{%block title%} testing {%endblock%}
-{%endblock%}
-
-
-{%block body%}
-
-<form action="/login" method = "POST">
-    <p>name <input type = "text" name = "name" /></p>
-    <p>age <input type = "integer" name = "age" /></p>
-    <p><input type = "submit" value = "Submit" /></p>
- </form>
-
-{%endblock%}
-
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>My Form</title> 
+</head> 
+<body> 
+    <h1>My Form</h1> 
+    <form method="post" action="/" enctype="multipart/form-data"> 
+        {{ form.csrf_token }} 
+        <p>{{ form.name.label }} {{ form.name() }}</p> 
+        <p>{{ form.password.label }} {{ form.password() }}</p> 
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p> 
+        <p>{{ form.salary.label }} {{ form.salary() }}</p> 
+        <p>{{ form.gender.label }} {{ form.gender() }}</p> 
+        <p>{{ form.country.label }} {{ form.country() }}</p> 
+        <p>{{ form.message.label }} {{ form.message() }}</p> 
+        <p>{{ form.photo.label }} {{ form.photo() }}</p> 
+        <p><input type="submit" value="Submit"></p> 
+    </form> 
+</body> 
+</html>

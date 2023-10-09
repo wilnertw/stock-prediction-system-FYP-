@@ -273,10 +273,28 @@ h1 h2 p{
     align-items: center;
 
 }
+
+.register_form p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+}
+
+.register_form p1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 7.5%;
+    width: 15%;
+    margin: 1%;
+}
+
 .register_form input{
     all: unset;
-    height: 5%;
-    width: 70%;
+    padding-left: 10px;
+    height: 100%;
+    width: 100%;
     background-color: #e6e6e6;
     border-radius: 5px;
 }
@@ -287,11 +305,12 @@ h1 h2 p{
 
 #signin{
     all: unset;
-    height: 8%;
-    width: 16%;
+    height: 100%;
+    width: 100%;
     text-align: center;
     border-radius: 10px;
     background-color: #4F5AC1;
     color: white;
+    user-select: none;
 
 }
