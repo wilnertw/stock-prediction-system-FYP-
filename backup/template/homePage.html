@@ -1,0 +1,47 @@
+{%extends "base.html"%}
+
+{%block title%}Stock Screener{%endblock%}
+
+{%block body%}
+ <div class="container_homePage">
+        <div class="top-nav">
+            <h1>stock.ai</h1>
+            <div class="nav"> 
+                <div class= "login">
+                    <a href="login_page">Log In</a>
+                    <a href="signin">Sign Up</a>
+                    <i class="fa-solid fa-circle-user" id = "usericon"></i>
+                </div>               
+                <div class="bottom-nav">
+                    <a style="text-decoration: 2px underline">Screener</a>
+                    <a>Stock Ideas</a>
+                    <a>Watchlist</a>
+                    <a href="feedback">Feedback</a>
+                </div>
+            </div>
+        </div>
+        <div class="middle-nav">
+            <h1>Stock Screener</h1>
+            <h2>Be proficient in stocks investing with the help of AI</h2>
+            <button id = "filter"><i class="fa-solid fa-circle-plus"></i> Add Filter</button>
+            <div class="selection">
+                <button id="selected">Overview</button>
+                <button>Price</button>
+                <button>Forecast</button>
+                <button>Valuation</button>
+                <button>Financials</button>
+                <button>Earnings & Revenue</button>
+                <button>Dividends</button>
+                <button>Technicals</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="tab">
+                <img src="tab.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+{%endblock%}
+

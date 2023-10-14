@@ -4,7 +4,7 @@
 
 {%block body%}
 <div class="container_signIn">
-    <form action="register_page" method="POST" class="register_form" enctype="multipart/form-data">
+    <form action="signin_page" method="POST" class="register_form">
         <h1>Register</h1>
         {{ form.csrf_token }} 
         <p>{{form.fullname.label}}</p>
@@ -15,10 +15,10 @@
         <p>{{form.email(size=30)}}</p>
         <p>{{form.password.label}}</p>
         <p>{{form.password(size=30)}}</p>
-        <p>{{form.confirm.label}}</p>
-        <p>{{form.confirm(size=30)}}</p>
+        <p>{{form.pass_con.label}}</p>
+        <p>{{form.pass_con(size=30)}}</p>
         <a href="login">Already have an account?</a>
-        <p1><input type="submit" value="Sign In" id="signin"></p1>
+        <p1><input onclick="pswCheck()" type="submit" value="Sign In" id="signin"></p1>
         
     </form>
    
