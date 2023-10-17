@@ -14,14 +14,18 @@ def view_homepage():
 def signin():
     form = registerForm()
     if form.validate_on_submit():
+        fullname = form.fullname.data
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+        creationDate = datetime.now()
         
         
-        
-        user = Users(fullname = form.fullname.data,
-                     username = form.username.data,
-                     email = form.email.data,
-                     password = form.password.data,
-                     creationDate = datetime.now())
+        user = Users(fullname = fullname,
+                     username = username,
+                     email = email,
+                     password = generate_password_hash(password),
+                     creationDate = creationDate)
 
         db.session.add(user)
         db.session.commit()
