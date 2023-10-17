@@ -10,15 +10,20 @@
                 <br> with the help of AI</h2>
         </div>
 
-        <form action="view_login" method="post" class="login_form">
+        <form action="login_page" method="post" class="login_form">
             <h1>Login</h1>
+            {% for message in get_flashed_messages() %}
+            <div class="alert-error">
+                Error: {{ message }}. Go to <a href="login_page">login page</a>?
+            </div>
+            {% endfor %}
             {{ form.csrf_token }}
             <p>{{form.username.label}}</p>
             <p>{{form.username(size=30)}}</p>
             <p>{{form.password.label}}</p>
             <p>{{form.password(size=30)}}</p>
-            <a href="view_signin">Don't have an account? Join Us!</a>
-            <p1> <input type="submit" value="Log In">  </p1>
+            <a href="signin_page">Don't have an account? Join Us!</a>
+            <p1> <input type="submit" value="Log In" id="login">  </p1>
         </form>
     </div>
 {%endblock%}

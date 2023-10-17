@@ -6,6 +6,11 @@
 <div class="container_signIn">
     <form action="signin_page" method="POST" class="register_form">
         <h1>Register</h1>
+            {% for message in get_flashed_messages() %}
+            <div class="alert-error">
+                Error: {{ message }}. Go to <a href="login_page">login page</a>?
+            </div>
+            {% endfor %}
         {{ form.csrf_token }} 
         <p>{{form.fullname.label}}</p>
         <p>{{form.fullname(size=30)}}</p>
@@ -18,7 +23,7 @@
         <p>{{form.pass_con.label}}</p>
         <p>{{form.pass_con(size=30)}}</p>
         <a href="login">Already have an account?</a>
-        <p1><input onclick="pswCheck()" type="submit" value="Sign In" id="signin"></p1>
+        <p1><input type="submit" value="Sign In" id="signin"></p1>
         
     </form>
    
@@ -29,5 +34,6 @@
     </div>
 </div>
 {%endblock%}
+
 
 
