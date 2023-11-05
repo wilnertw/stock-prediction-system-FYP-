@@ -1,5 +1,6 @@
 from web import app
 from flask import render_template, redirect, url_for, flash
+from flask_login import login_user, login_required, current_user, logout_user
 from datetime import datetime
 from ..models.forms import registerForm, loginForm, flash_errors
 from ..models.models import Users
@@ -9,7 +10,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 @app.route('/')
 def view_homepage():
     return render_template('homePage.html')
-
 
 @app.route('/signin_page', methods=['POST', 'GET'])
 def signin():
@@ -35,14 +35,15 @@ def signin():
             user = Users(fullName = fullname,
                         username = username,
                         email = email,
-                        password = generate_password_hash(password, method='sha256'),
-                        creationDate = creationDate)
+                        password = generate_password_hash(password, method='sha256'), # type: ignore
+                        creationDate = creationDate)  # type: ignore
         
             db.session.add(user)
             db.session.commit()
     else:
         flash_errors(form)
     return render_template('signinPage.html', form=form)
+
 
 @app.route('/login_page', methods = ['POST', 'GET'])
 def login(): 
@@ -53,11 +54,24 @@ def login():
         
         user = Users.query.filter_by(username = username).first()
         
-        if not user or not check_password_hash(user.password, psw):
+        if not user or not check_password_hash(user.password, psw): # type: ignore
             flash('Please check your login details and try again.')
             redirect(url_for('login'))
-    
+               
+        login_user(user)
+        return redirect(url_for('profile'))
+        
     return render_template('loginPage.html', form = form)
+
+@app.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html', name = current_user.fullName) #type: ignore
+
+app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('view_homepage'))
 
 
 # @app.route('/signin', methods=["GET", "POST"])

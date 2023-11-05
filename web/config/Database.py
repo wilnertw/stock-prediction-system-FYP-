@@ -1,5 +1,4 @@
 from web import app
-import mysql.connector
 from flask_sqlalchemy import SQLAlchemy
 
 # connection = mysql.connector.connect(
