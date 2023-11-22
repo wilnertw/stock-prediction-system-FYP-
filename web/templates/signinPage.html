@@ -4,26 +4,29 @@
 
 {%block body%}
 <div class="container_signIn">
-    <form action="signin_page" method="POST" class="register_form">
+    <div class="back-btn">
+        <a href="/"><- Back</a> 
+    </div>
+    <form action="signin_page" method="POST" class="register_form" onsubmit="pswCheck()">
         <h1>Register</h1>
             {% for message in get_flashed_messages() %}
             <div class="alert-error">
-                Error: {{ message }}. Go to <a href="login_page">login page</a>?
+                {{ message }}. Go to <a href="login_page">login page</a>?
             </div>
             {% endfor %}
         {{ form.csrf_token }} 
         <p>{{form.fullname.label}}</p>
-        <p>{{form.fullname(size=30)}}</p>
+        <p>{{form.fullname(size=30, placeholder = "Enter Full Name")}}</p>
         <p>{{form.username.label}}</p>
-        <p>{{form.username(size=30)}}</p>
+        <p>{{form.username(size=30, placeholder = "Enter Username")}}</p>
         <p>{{form.email.label}}</p>
-        <p>{{form.email(size=30)}}</p>
+        <p>{{form.email(size=30, placeholder = "Enter Email")}}</p>
         <p>{{form.password.label}}</p>
-        <p>{{form.password(size=30)}}</p>
+        <p>{{form.password(size=30, placeholder = "Enter Password")}}</p>
         <p>{{form.pass_con.label}}</p>
-        <p>{{form.pass_con(size=30)}}</p>
-        <a href="login">Already have an account?</a>
-        <p1><input type="submit" value="Sign In" id="signin"></p1>
+        <p>{{form.pass_con(size=30, placeholder = "Repeat Password")}}</p>
+        <a href="login_page">Already have an account?</a>
+        <p1><input  type="submit" value="Sign In" id="signin"></p1>
         
     </form>
    

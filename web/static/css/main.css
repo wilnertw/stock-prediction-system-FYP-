@@ -1,321 +1,1280 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
-html{
-    width: 100%;
-    height: 100%;
-}
-body{
-    width: 100%;
-    height: 100%;
-    padding: 0%;
-    margin: 0%;
-    font-family: IBM Plex Mono;
+
+/*
+! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
+*/
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
 }
 
-.content{
-    
+::before,
+::after {
+  --tw-content: '';
 }
 
-a{
-    text-decoration: none;
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+*/
+
+html {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: IBM Plex Mono;
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
 }
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+.static{
+  position: static;
+}
+
+.block{
+  display: block;
+}
+
+.underline{
+  text-decoration-line: underline;
+}
+
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 h1 h2 p{
-    user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.back-btn{
+  position: absolute;
+  height: 4%;
+  width: 6%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin-right: 92%;
+  margin-bottom: 44%;
+}
+
+.back-btn a{
+  all: unset;
+  font-weight: 400;
+  transition: ease-in 0.2s;
+  color: #4F5AC1;
+}
+
+.back-btn a:hover{
+  font-weight: 400;
+  color: black;
 }
 
 /* -------Home Page--------- */
+
 .container_homePage{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0%;
-    margin: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0%;
+  margin: 0%;
 }
-/*top-nav*/ 
-.header{
-    width: 100%;
-    height: 15%;
-    padding: 0%;
-    margin: 0%;
-    background: #4F5AC1;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    user-select: none;
+
+/*top-nav*/
+
+.header_home{
+  width: 100%;
+  height: 15%;
+  padding: 0%;
+  margin: 0%;
+  background: #4F5AC1;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.header h1{
-    font-size: 4rem;
-    margin-left: 3%;
+
+.header_home h1{
+  font-size: 4rem;
+  margin-left: 3%;
 }
+
 .nav{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
 .nav a{
-    color: white;
-    text-decoration: none;
-    transition: ease-in 0.2s;
-    cursor: pointer;
-
+  color: white;
+  text-decoration: none;
+  transition: ease-in 0.2s;
+  cursor: pointer;
 }
+
 .nav a:hover{
-    color: black;
+  color: black;
 }
+
 .login{
-    width: 50%;
-    height: 20%;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 3%;
-    margin-left: 70%;
-    align-items: center;
+  width: 50%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3%;
+  margin-left: 70%;
+  align-items: center;
 }
+
 .login a{
-    font-size: smaller;
-    margin-left: 10%;
-    color: white;
-    text-decoration: none;
-    transition: ease-in 0.2s;
+  font-size: smaller;
+  margin-left: 10%;
+  color: white;
+  text-decoration: none;
+  transition: ease-in 0.2s;
 }
+
 .login a:hover{
-    color: black;
+  color: black;
 }
+
 .bottom-nav{
-    display: flex;
-    flex-direction: row;
-    margin-left: 47%;
-    font-weight: 300;
-
+  display: flex;
+  flex-direction: row;
+  margin-left: 47%;
+  font-weight: 300;
 }
+
 .bottom-nav a{
-    margin-left: 10%;
+  margin-left: 10%;
 }
+
 #signup{
-    padding-bottom: 3.5%;
-    font-size: smaller;
-    margin-left: 1%;
+  padding-bottom: 3.5%;
+  font-size: smaller;
+  margin-left: 1%;
 }
+
 #login:hover{
-    color: black;
+  color: black;
 }
+
 #usericon{
-    font-size: 2rem;
-    margin-left: 10%;
+  font-size: 2rem;
+  margin-left: 10%;
 }
+
 /*middle-nav*/
+
 .content-nav{
-    height: 35%;
-    width: 100%;
-    background-image: url("middle-nav.jpg");
-    background-size: cover;
-    background-position-y: -160px;
-    display: flex;
-    flex-direction: column;
-
+  height: 35%;
+  width: 100%;
+  background-image: url("middle-nav.jpg");
+  background-size: cover;
+  background-position-y: -160px;
+  display: flex;
+  flex-direction: column;
 }
+
 .content-nav h1{
-    margin-top: 3%;
-    margin-left: 3%;
+  margin-top: 3%;
+  margin-left: 3%;
 }
+
 .content-nav h2{
-    margin-top: 0%;
-    margin-left: 3%;
+  margin-top: 0%;
+  margin-left: 3%;
 }
+
 #filter{
-    all: unset;
-    width: 13%;
-    height: 16%;
-    border-radius: 10px;
-    background-color: #4F5AC0;
-    font-size: 1.5rem;
-    font-family: IBM Plex Mono; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    margin-left: 3%;
-    box-shadow: none;
-    outline: none;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    text-align: center;
+  all: unset;
+  width: 13%;
+  height: 16%;
+  border-radius: 10px;
+  background-color: #4F5AC0;
+  font-size: 1.5rem;
+  font-family: IBM Plex Mono;
+  font-weight: 400;
+  word-wrap: break-word;
+  margin-left: 3%;
+  box-shadow: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-align: center;
 }
+
 #filter:active{
-    background-color: #3139a4;
-    color: white;
+  background-color: #3139a4;
+  color: white;
 }
+
 .selection{
-    display: flex;
-    flex-direction: row;
-    margin-top: 2%;
-    margin-left: -2%;
-    background-color: rgba(79, 90, 192, 0.2);
-    height: 12.5%;
-
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  margin-left: -2%;
+  background-color: rgba(79, 90, 192, 0.2);
+  height: 12.5%;
 }
+
 .selection button{
-    all: unset;
-    margin-left: 5%;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    user-select: none;
-}
-.selection button:hover{
-    background-color: rgba(79, 90, 192, 0.4);
-    text-decoration: 2px underline;
-    color: #283086;
-    
-}
-#selected{
-    background-color: rgba(79, 90, 192, 0.4);
-    text-decoration: 2px underline;
-    color: #283086;
-}
-.content{
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    margin: 0%;
-    align-items: center;
-}
-.tab img{
-    position:sticky;
-    margin-top: 2%;
+  all: unset;
+  margin-left: 5%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
+.selection button:hover{
+  background-color: rgba(79, 90, 192, 0.4);
+  -webkit-text-decoration: 2px underline;
+          text-decoration: 2px underline;
+  color: #283086;
+}
+
+#selected{
+  background-color: rgba(79, 90, 192, 0.4);
+  -webkit-text-decoration: 2px underline;
+          text-decoration: 2px underline;
+  color: #283086;
+}
+
+.content{
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0%;
+  align-items: center;
+}
+
+.tab img{
+  position:sticky;
+  margin-top: 2%;
+}
 
 /* -----Login Page------ */
 
 .container_logIn{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0%;
-    margin: 0%;
-    background: #4F5AC1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0%;
+  margin: 0%;
+  background: #4F5AC1;
 }
+
 .logo{
-    margin-right: 10%;
-}   
+  margin-right: 10%;
+}
+
 .logo h1{
-    font-size: 4rem;
-    margin-top: 0%;
-    margin-bottom: 0%;
+  font-size: 4rem;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
+
 .login_form{
-    width: 30%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: white;
-    border-radius: 5%;
+  width: 30%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 5%;
 }
+
 .login_form h1{
-    margin-bottom: 0%;
+  margin-bottom: 0%;
 }
+
 .login p{
-    margin-bottom: 0%;
+  margin-bottom: 0%;
 }
+
+.login_form p1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 7.5%;
+  width: 15%;
+  margin: 1%;
+}
+
+.login_form input{
+  all: unset;
+  padding-left: 10px;
+  height: 100%;
+  width: 100%;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+}
+
+.login_form input:focus{
+  background-color: #c5c5c5;
+  font-size: 1rem;
+}
+
 #login{
-    all: unset;
-    border-radius: 5px;
-    background-color: #e6e6e6;
-    height: 5%;
-    width: 70%;
-}
-
-#login:focus{
-    background-color: #c5c5c5;
-    font-size: 1rem;
-
-}
-
-#login{
-    all: unset;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #4F5AC1;
-    color: white;
-
+  all: unset;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #4F5AC1;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 /* -----Sign In----- */
-.container_signIn{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0%;
-    margin: 0%;
-    background: #4F5AC1;        
-}
-.logo{
-    margin-left: 5%;
 
+.container_signIn{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0%;
+  margin: 0%;
+  background: #4F5AC1;
 }
+
+.logo{
+  margin-left: 5%;
+}
+
 .logo h1{
-    font-size: 4rem;
-    margin-bottom: 0%;
+  font-size: 4rem;
+  margin-bottom: 0%;
 }
 
 .register_form {
-    height: 70%;
-    width: 30%;
-    background-color: white;
-    border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  height: 70%;
+  width: 30%;
+  background-color: white;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .register_form p{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1%;
 }
 
 .register_form p1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 7.5%;
-    width: 15%;
-    margin: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 7.5%;
+  width: 15%;
+  margin: 1%;
 }
 
 .register_form input{
-    all: unset;
-    padding-left: 10px;
-    height: 100%;
-    width: 100%;
-    background-color: #e6e6e6;
-    border-radius: 5px;
+  all: unset;
+  padding-left: 10px;
+  height: 100%;
+  width: 100%;
+  background-color: #e6e6e6;
+  border-radius: 5px;
 }
+
 .register_form input:focus{
-    background-color: #c5c5c5;
-    font-size: 1rem;
+  background-color: #c5c5c5;
+  font-size: 1rem;
 }
 
 #signin{
-    all: unset;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #4F5AC1;
-    color: white;
-    user-select: none;
+  all: unset;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #4F5AC1;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
 
+/* -----Feedback----- */
+
+.container_feedback{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0%;
+  margin: 0%;
+  background: #4F5AC1;
+}
+
+.container_feedback h1{
+  color: white;
+}
+
+.feedback_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+  width: 50%;
+  height: 70%;
+}
+
+.feedback_text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedback_text textarea{
+  border: none;
+  resize: none;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.feedback_text textarea:focus{
+  outline: none;
+  background-color: #c5c5c5;
+  font-size: 1rem;
+  border: white;
+}
+
+.feedback_rating{
+  display: flex;
+  flex-direction: row;
+}
+
+.feedback_rating ul{
+  display: flex;
+  flex-direction: row;
+  margin: 0%;
+}
+
+#rating li{
+  all: unset;
+  display: flex;
+  flex-direction: row;
+}
+
+.feedback_form p1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 7.5%;
+  width: 10%;
+  margin: 1%;
+}
+
+#feedback_btn{
+  all: unset;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #4F5AC1;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+#feedback_btn:hover{
+  color: black;
+}
+
+/* -----Profile----- */
+
+.container-profile{
+  width: 100%;
+  height:100%
+}
+
+.header_profile{
+  width: 100%;
+  height: 15%;
+  padding: 0%;
+  margin: 0%;
+  background: #4F5AC1;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.profile_logo h1 a{
+  color: white;
+  margin: 0%;
+  font-size: 3.5rem;
+  transition: ease-in 0.2s;
+}
+
+.profile_logo a:hover{
+  color: black;
+}
+
+.profile_nav{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  margin-left: 40%;
+}
+
+.profile_nav a{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  color: white;
+  text-decoration: none;
+  transition: ease-in 0.2s;
+  margin-left: 20%;
+}
+
+.profile_nav a:hover{
+  color:black;
+}
+
+.profile_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.profile_content hr{
+  width: 100%;
+}
+
+.profile_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile_form p1{
+  height: 40%;
+  width: 30%;
+}
+
+#save-btn{
+  all: unset;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #4F5AC1;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: ease-in 0.2s;
+}
+
+#save-btn:hover{
+  color:black;
+}
+
+.del_acc{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.del_acc p1{
+  height: 50%;
+  width: 60%;
+}
+
+#del_acc-btn{
+  all: unset;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #4F5AC1;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: ease-in 0.2s;
+}
+
+#del_acc-btn:hover{
+  color:black;
+}
+
+/* -----Admin View----- */
+
+.container_admin{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0%;
+  margin: 0%;
+}
+
+.header_admin{
+  width: 100%;
+  height: 15%;
+  padding: 0%;
+  margin: 0%;
+  background: #4F5AC1;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.profile_logo h1 a{
+  color: white;
+  margin: 0%;
+  font-size: 3.5rem;
+  transition: ease-in 0.2s;
+}
+
+.profile_logo a:hover{
+  color: black;
+}
+
+.admin_nav{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  margin-left: 40%;
+}
+
+.admin_nav a{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  color: white;
+  text-decoration: none;
+  transition: ease-in 0.2s;
+  margin-left: 20%;
+}
+
+.admin_nav a:hover{
+  color:black;
+}
+
+.admin-content-sidebar{
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  height:100%;
+  width: 15%;
+}
+
+/* -----Manage User View----- */
+
+.container_mngUser{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0%;
+  margin: 0%;
+}
+
+.header_mngUser{
+  width: 100%;
+  height: 15%;
+  padding: 0%;
+  margin: 0%;
+  background: #4F5AC1;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.profile_logo h1 a{
+  color: white;
+  margin: 0%;
+  font-size: 3.5rem;
+  transition: ease-in 0.2s;
+}
+
+.profile_logo a:hover{
+  color: black;
+}
+
+.mngUser-nav{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  margin-left: 40%;
+}
+
+.mngUser-nav a{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  color: white;
+  text-decoration: none;
+  transition: ease-in 0.2s;
+  margin-left: 20%;
+}
+
+.mngUser-nav a:hover{
+  color:black;
+}
+
+.mngUser-content{
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  height:100%;
+  width: 15%;
 }

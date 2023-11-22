@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Feedback {% endblock %}
+
+{% block body %}
+
+    <div class="container_feedback">
+        <div class="back-btn">
+            <a href="profile"><- Back</a>
+        </div>
+        <h1>Feedback</h1>
+        <form action="feedback" method="POST" class="feedback_form" onsubmit="feedback_alert()">
+            {% for message in get_flashed_messages() %}
+            <div class="alert-error">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {{form.csrf_token}}
+            <div class="feedback_text">
+                <p>{{form.feedback.label}}</p>
+                <p>{{form.feedback(cols="80", rows="15", wrap="soft")}}</p>
+            </div>
+            <div class="feedback_rating">
+                <p id="rating_label">{{form.rating.label}}</p>
+                <p>{{form.rating}}</p>
+            </div>
+            <p1><input id="feedback_btn" type="submit" value="Submit"></p1>
+        </form>
+    </div>
+{% endblock %}

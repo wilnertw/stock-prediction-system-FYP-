@@ -3,20 +3,30 @@
 {%block title%}Stock Screener{%endblock%}
 
 {%block body%}
- <div class="container_homePage">
-        <div class="header">
+ <div class="container_homePage ">
+        <div class="header_home">
             <h1>stock.ai</h1>
-            <div class="nav"> 
+            <div class="nav">
                 <div class= "login">
-                    <a href="login_page">Log In</a>
-                    <a href="signin_page">Sign Up</a>
+                    {% if current_user.is_authenticated %}
+                        <a href="logout">Logout</a>
+                    {% else %}
+                        <a href="login_page">Log In</a>
+                        <a href="signin_page">Sign Up</a>
+                    {%endif%}
+
                     <i class="fa-solid fa-circle-user" id = "usericon"></i>
                 </div>               
                 <div class="bottom-nav">
-                    <a style="text-decoration: 2px underline">Screener</a>
-                    <a>Stock Ideas</a>
-                    <a>Watchlist</a>
-                    <a href="feedback">Feedback</a>
+                    {% if current_user.is_authenticated %}
+                        <a style="text-decoration: 2px underline">Screener</a>
+                        <a>Stock Ideas</a>
+                        <a href="#">Watchlist</a>
+                        <a href="feedback">Feedback</a>
+                    {% else %}
+                        <a style="text-decoration: 2px underline; margin-left:52%">Screener</a>
+                        <a>Stock Ideas</a>
+                    {%endif%}
                 </div>
             </div>
         </div>

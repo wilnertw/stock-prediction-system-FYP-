@@ -1,25 +1,44 @@
 {% extends "base.html" %}
 
-{% block title %} Welcome, {{name}} {% endblock %}
+{% block title %} Profile {% endblock %}
 
 {% block body %}
 
-    {% block header %}
-
-        <div>
-            <a href="logout"></a>
+    <div class="container-profile">
+        <div class="header_profile">
+            <div class="profile_logo">
+                <h1><a href="logged_in">stock.ai</a></h1>
+            </div>
+            <div class="profile_nav">
+                {% if current_user.userRank == 1 %}
+                    <a href="admin">Admin Control Panel</a>
+                    <a href="logout">Logout</a>
+                    <a href="feedback">Feedback</a>
+                    <a href="watchlist">Watchlist</a>
+                {% else %}
+                    <a href="logout">Logout</a>
+                    <a href="feedback">Feedback</a>
+                    <a href="watchlist">Watchlist</a>
+                {% endif %}
+            </div>
         </div>
-
-    {% endblock %}
-
-    {% block content %}
-
-    
-
-    {% endblock %}
-
-    {% block footer %}
-
-    {% endblock %}
-
+        <div class="profile_content">
+            <h1>Welcome, {{current_user.username}}</h1>
+            <hr>
+            <form action="profile" class="profile_form"  method="POST" onsubmit="saved_alert()">
+                <p>{{form.crsf_token}}</p>
+                <p>{{form.birth_date.label}}</p>
+                <p>{{form.birth_date}}</p>
+                <p>{{form.country.label}}</p>
+                <p>{{form.country}}</p>
+                <p>{{form.stockSectorPreferences.label}}</p>
+                <p>{{form.stockSectorPreferences}}</p>
+                <p1 ><input type="submit" value="Save"  id="save-btn"></p1>
+            </form>
+            <form class="del_acc" action="delAcc" method="GET" onsubmit="acc_deleted()">
+                <p>Delete Account? </p>
+                <p1><input type="submit" value="Delete Account" id="del_acc-btn"></p1>
+            </form>
+        </div>
+    </div>
 {% endblock %}

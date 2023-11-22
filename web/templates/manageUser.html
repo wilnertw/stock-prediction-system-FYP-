@@ -1,0 +1,40 @@
+{% extends "base.html"%}
+
+{% block title %}Admin: Manage User{% endblock %}
+
+{% block body %}
+
+    <div class="container_mngUser">
+        <div class="header_mngUser">
+            <div class="profile_logo">
+                <h1><a href="logged_in">stock.ai</a></h1>
+            </div>
+            <div class="mngUser-nav">
+                <a href="profile">Profile</a>
+            </div>
+        </div>
+        <div class="mngUser-content">
+            <table>
+                <tr>
+                    <th>username</th>
+                    <th>Preferred Stocks</th>
+                    <th>Birth Date</th>
+                    <th>Country</th>
+                </tr>
+                {% for user, profile in users %}
+                <tr>   
+                    {% if user != current_user%}
+                    <td>{{user.username}}</td>
+                    <td>{{profile.stockSectorPreferences}}</td>
+                    <td>{{profile.birth_date}}</td>
+                    <td>{{profile.country}}</td>
+                    <td><a href=""></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

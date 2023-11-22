@@ -3,7 +3,11 @@
 {%block title%}Login{%endblock%}
 
 {%block body%}
-    <div class="container_logIn">
+
+    <div class="container_logIn ">
+        <div class="back-btn">
+            <a href="/"><- Back</a>
+        </div>
         <div class="logo">
             <h1>stock.ai</h1>
             <h2>Be proficient in stocks investing 
@@ -14,14 +18,14 @@
             <h1>Login</h1>
             {% for message in get_flashed_messages() %}
             <div class="alert-error">
-                Error: {{ message }}. Go to <a href="login_page">login page</a>?
+                {{ message }}. Go to <a href="signin">login page</a>?
             </div>
             {% endfor %}
             {{ form.csrf_token }}
             <p>{{form.username.label}}</p>
-            <p>{{form.username(size=30)}}</p>
+            <p>{{form.username(size=30, placeholder = "Enter Username")}}</p>
             <p>{{form.password.label}}</p>
-            <p>{{form.password(size=30)}}</p>
+            <p>{{form.password(size=30, placeholder = "Enter Password")}}</p>
             <a href="signin_page">Don't have an account? Join Us!</a>
             <p1> <input type="submit" value="Log In" id="login">  </p1>
         </form>
